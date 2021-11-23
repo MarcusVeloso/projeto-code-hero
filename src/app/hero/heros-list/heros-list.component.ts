@@ -8,12 +8,18 @@ import { HeroService } from '../services/hero.service';
 })
 export class HerosListComponent implements OnInit {
 
-  public heroList:any = [];
+  page: number = 1;
+
+  public heroList: any = [];
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
     this.heroService.obterTodos()
-        .subscribe(heroLista => this.heroList = heroLista);
+      .subscribe(heroLista => this.heroList = heroLista);
+  }
+
+  pesquisarPersonagem() {
+
   }
 }

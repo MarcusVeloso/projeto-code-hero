@@ -1,0 +1,17 @@
+.nome-personagem {
+	padding-left: 20px;
+}
+
+img {    
+	width: 48px;
+	top: 298px;
+	left: 137px;
+	width: 48px;
+	height: 48px;
+	border-radius: 5px;
+}
+
+.table>:not(:first-child) {
+	border-top: 2px !important;
+	box-shadow: 0px 0px 5px #00000033;
+}

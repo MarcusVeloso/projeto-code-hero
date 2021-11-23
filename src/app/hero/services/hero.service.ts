@@ -11,7 +11,8 @@ export class HeroService extends BaseService {
 
   obterTodos(): Observable<any[]>{
     return this.http
-               .get<any[]>(this.UrlSreviceV1 + "characters" + super.obterAutenticacao(), super.obterHeaderJson())
+               .get<any[]>(this.UrlSreviceV1)
+              //  .get<any[]>(this.UrlSreviceV1 + "characters" + super.obterAutenticacao(), super.obterHeaderJson())
                .pipe(catchError(super.serviceError));
   }
 

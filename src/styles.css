@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@media only screen and (max-width: 499px) {
+	.mobile-hide{ display: none !important; }
+}
+@media only screen and (max-width: 450px) {
+	.mobile{ display: inline !important; }
+}
+
+
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	background: #E5E5E5 0% 0% no-repeat padding-box;
+	opacity: 1;
+	color: #555555;
+ }
+
+.container { margin-top: 50px; }
