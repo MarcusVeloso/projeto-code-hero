@@ -1,0 +1,8 @@
+<h3>Buscar personagens</h3>
+
+<h6>Nome do personagem</h6>
+<input type="text" id="campoPesquisa" name="campoPesquisa">
+
+<div *ngFor="let hero of heroList?.data?.results;">
+  <div [routerLink]="['/hero-details', hero.id]"> {{hero.name}}</div>
+</div>
