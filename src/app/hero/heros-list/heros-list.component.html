@@ -21,8 +21,16 @@
             alt="Imagem do personagem">
           <span class="nome-personagem"> <strong>{{hero.name}}</strong> </span>
         </td>
-        <td class="col-3" class="mobile-hide">Séries</td>
-        <td class="col-3" class="mobile-hide">Eventos</td>
+        <td class="col-3" class="mobile-hide">
+          <div *ngFor="let serie of hero.series.items">
+            {{serie.name}}
+          </div>
+        </td>
+        <td class="col-3" class="mobile-hide">
+          <div *ngFor="let event of hero.events.items">
+            {{event.name}}
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
