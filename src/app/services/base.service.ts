@@ -26,6 +26,6 @@ export abstract class BaseService {
   }
 
   protected obterAutenticacao(){
-    return `?ts=1&apikey=${environment.apikey}&hash=${environment.hash}`;
+    return `ts=1&apikey=${environment.apikey}&hash=${environment.hash}`;
   }
 }

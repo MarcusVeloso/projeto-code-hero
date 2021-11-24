@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
 import { HerosListComponent } from './hero/heros-list/heros-list.component';
 import { HerosDetailsComponent } from './hero/heros-details/heros-details.component'
 import { HeroService } from './hero/services/hero.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { HeroService } from './hero/services/hero.service';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
 
     NgxPaginationModule,
 
@@ -42,6 +45,7 @@ import { HeroService } from './hero/services/hero.service';
     MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
+    MatSnackBarModule,
   ],
   providers: [
     HeroService,

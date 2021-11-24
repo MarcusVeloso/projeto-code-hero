@@ -1,12 +1,14 @@
 <div class="container">
   <h3>Busca de personagens</h3>
+
   <h6>Nome do personagem</h6>
-  <div class="form-group pesquisa">    
+  <div class="form-group pesquisa">
     <span class="material-icons form-control-feedback">search</span>
-    <input type="text" id="parametroPesquisa" class="form-control" placeholder="Search" (keyup.enter)="pesquisarPersonagem()">
+    <input type="text" id="parametroPesquisa" [(ngModel)]="parametroPesquisa" class="form-control" placeholder="Search"
+      (keyup.enter)="pesquisarPersonagem(parametroPesquisa)">
   </div>
 
-  <div class="row personagem-titulo">
+  <div *ngIf="heroList?.data?.count > 0" class="row personagem-titulo">
     <div class="col-sm-5 col-md-4">Personagem</div>
     <div class="col-sm-5 col-md-5 mobile-hide">Séries</div>
     <div class="col-sm-3 col-md-3 mobile-hide">Eventos</div>
@@ -32,8 +34,8 @@
     </div>
 
   </div>
-
-  <pagination-controls class="my-pagination" (pageChange)="page = $event" previousLabel="" nextLabel="">
+  
+  <pagination-controls *ngIf="heroList?.data?.count > 0" class="my-pagination" (pageChange)="page = $event" previousLabel="" nextLabel="">
   </pagination-controls>
 
 </div>

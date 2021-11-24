@@ -11,13 +11,19 @@ export class HeroService extends BaseService {
 
   obterTodos(): Observable<any[]>{
     return this.http
-               .get<any[]>(this.UrlSreviceV1 + "characters" + super.obterAutenticacao(), super.obterHeaderJson())
+               .get<any[]>(this.UrlSreviceV1 + "characters?" + super.obterAutenticacao(), super.obterHeaderJson())
                .pipe(catchError(super.serviceError));
   }
 
   obterPorId(id:any): Observable<any>{
     return this.http
-               .get<any>(this.UrlSreviceV1 + "characters/" + id + super.obterAutenticacao(), super.obterHeaderJson())
+               .get<any>(this.UrlSreviceV1 + "characters/" + id +"?"+ super.obterAutenticacao(), super.obterHeaderJson())
+               .pipe(catchError(super.serviceError));
+  }
+
+  obterPorNome(nome:string): Observable<any[]>{
+    return this.http
+               .get<any[]>(this.UrlSreviceV1 + "characters?name=" + nome +"&"+ super.obterAutenticacao(), super.obterHeaderJson())
                .pipe(catchError(super.serviceError));
   }
 }
