@@ -1,6 +1,5 @@
 <div class="container">
   <h3>Busca de personagens</h3>
-
   <h6>Nome do personagem</h6>
   <div class="form-group pesquisa">    
     <span class="material-icons form-control-feedback">search</span>
@@ -13,8 +12,7 @@
     <div class="col-sm-3 col-md-3 mobile-hide">Eventos</div>
   </div>
 
-  <div class="card" *ngFor="let hero of heroList?.data.results | paginate: { itemsPerPage: 10, currentPage: page }" class="card"
-    style="margin-bottom: 8px;">
+  <div class="card" *ngFor="let hero of heroList?.data?.results | paginate: { itemsPerPage: 10, currentPage: page }">
 
     <div class="row" [routerLink]="['/hero-details', hero.id]">
       <div class="col-sm-5 col-md-4">

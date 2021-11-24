@@ -41,6 +41,7 @@ h6 {
 
 .card {
 	padding: 20px 20px 20px 24px;
+	margin-bottom: 8px;
 	background: #FFFFFF 0% 0% no-repeat padding-box;
 	box-shadow: 0px 0px 5px #00000033;
 	border-radius: 4px;
@@ -91,10 +92,75 @@ img {
 		 display: none !important; 
 		}
 
-	h3 {
-		font-family: PT Sans Caption;
-		font-size: 24px;
-		font-weight: bold;
-		text-align: center;
-	}
+		div.container {
+			margin-left: 0px;
+			margin-right: 0px;
+			padding-right: 0px;
+			padding-left: 0px;
+		}
+
+		h3 {
+			text-align: center;
+			font: normal normal bold 24px/30px PT Sans Caption;
+			letter-spacing: 0px;
+			color: #555555;
+			opacity: 1;
+		}
+		
+		h6 {
+			text-align: center;
+			margin-top: 16px;
+			font: normal normal bold 14px/24px PT Sans Caption;
+			letter-spacing: 0px;
+			color: #555555;
+			opacity: 1;
+		}
+
+		.pesquisa .form-control {	
+			width: 327px;	
+			text-align: left;
+			font: italic normal normal 14px/19px PT Sans;
+			letter-spacing: 0px;
+			color: #8E8E8E;
+			opacity: 1;
+			border-radius: 4px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			border: 1px solid #E5E5E5;
+			margin-left: 24px;
+		}
+		
+		.pesquisa .form-control-feedback {
+			position: absolute;	
+			display: block;
+			padding-top: 4px;
+			pointer-events: none;
+			color: #aaa;
+			padding-left: 287px;
+			width: 24px;
+			height: 24px;
+			opacity: 1;
+		}
+
+		.personagem-titulo {
+			margin-top: 32.84px;
+			margin-bottom: 9px;
+			margin-left: 112px;
+			text-align: left;
+			font: normal normal normal 12px/16px PT Sans;
+			letter-spacing: 0px;
+			color: #8E8E8E;
+			opacity: 1;
+		}
+
+		.card {
+			padding: 12px 12px 12px 16px;
+			margin-left: 12px;
+			margin-bottom: 8px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			box-shadow: 0px 0px 5px #00000033;
+			border-radius: 4px;
+			opacity: 1;
+			max-width: 327px;
+			margin-left: 24px;
+		}
 }
