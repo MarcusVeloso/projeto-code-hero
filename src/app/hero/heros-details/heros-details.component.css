@@ -1,0 +1,55 @@
+p {
+    text-align: left;
+	font: normal normal normal 16px/20px PT Sans;
+	letter-spacing: 0px;
+	color: #8E8E8E;
+	opacity: 1;
+}
+
+h3 {
+	text-align: left;
+	font: normal normal bold 32px/30px PT Sans Caption;
+	letter-spacing: 0px;
+	color: #555555;
+	opacity: 1;
+    margin-bottom: 40px;
+}
+
+h5 {
+	text-align: left;
+	font: normal normal bold 20px/24px PT Sans Caption;
+	letter-spacing: 0px;
+	color: #555555;
+	opacity: 1;
+}
+
+li {
+    text-align: left;
+    font: normal normal normal 14px/16px PT Sans;
+    letter-spacing: 0px;
+    color: #555555;
+    opacity: 1;
+}
+
+img {    
+	margin: 20px;
+    width: 200px;
+	height: 200px;
+	border-radius: 4px;	
+}
+
+.titulo {
+	margin-top: 10px;
+	margin-bottom: 9px;
+	margin-left: 10px;
+	text-align: left;
+	font: normal normal normal 16px/16px PT Sans;
+	letter-spacing: 0px;
+	color: #8E8E8E;
+	opacity: 1;
+}
+
+.card:hover{
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);    
+}

@@ -1,5 +1,71 @@
 <div class="container">
 	<h3>Detalhes do personagens</h3>
-	<h4>Nome do personagem: </h4>
-	{{hero?.data?.results[0]?.name}}
+
+
+	<div class="card">
+		<img class="card-img-top"
+			src="{{hero?.results[0]?.thumbnail?.path +'.'+ hero?.results[0]?.thumbnail?.extension}}"
+			alt="Imagem do personagem">
+		<div class="card-body">
+			<h5 class="card-title">{{hero?.results[0]?.name}}</h5>
+			<p class="card-text">{{hero?.results[0]?.description}}</p>
+		</div>
+	</div>
+
+	<div class="titulo">Comics</div>
+	<li *ngIf="hero?.results[0]?.comics?.items.length == 0" class="list-group-item">Nenhum comic disponível.</li>
+	<ul class="list-group list-group-flush" *ngFor="let comic of hero?.results[0]?.comics.items">
+		<div class="card">
+			<li class="list-group-item">{{comic.name}}</li>
+		</div>
+	</ul>
+
+	<div class="titulo">Séries</div>
+	<li *ngIf="hero?.results[0]?.series?.items.length == 0" class="list-group-item">Nenhuma série disponível.</li>
+	<ul class="list-group list-group-flush" *ngFor="let serie of hero?.results[0]?.series.items">
+		<div class="card">
+			<li class="list-group-item">{{serie.name}}</li>
+		</div>
+	</ul>
+
+	<div class="titulo">Eventos</div>
+	<li *ngIf="hero?.results[0]?.events?.items.length == 0" class="list-group-item">Nenhum evento disponível.</li>
+	<ul class="list-group list-group-flush" *ngFor="let event of hero?.results[0]?.events.items">
+		<div class="card">
+			<li class="list-group-item">{{event.name}}</li>
+		</div>
+	</ul>
 </div>
+
+<!-- <div class="container">
+	<h3>Detalhes do personagens</h3>
+
+
+	<div class="card">
+		<img class="card-img-top"
+			src="{{hero?.results[0]?.thumbnail?.path +'.'+ hero?.results[0]?.thumbnail?.extension}}"
+			alt="Imagem do personagem">
+		<div class="card-body">
+			<h5 class="card-title">{{hero?.results[0]?.name}}</h5>
+			<p class="card-text">{{hero?.results[0]?.description}}</p>
+		</div>
+
+		<div class="titulo">Comics</div>
+		<li *ngIf="hero?.results[0]?.comics?.items.length == 0" class="list-group-item">Nenhum comic disponível.</li>
+		<ul class="list-group list-group-flush" *ngFor="let comic of hero?.results[0]?.comics.items">
+			<li class="list-group-item">{{comic.name}}</li>
+		</ul>
+
+		<div class="titulo">Séries</div>
+		<li *ngIf="hero?.results[0]?.series?.items.length == 0" class="list-group-item">Nenhuma série disponível.</li>
+		<ul class="list-group list-group-flush" *ngFor="let serie of hero?.results[0]?.series.items">
+			<li class="list-group-item">{{serie.name}}</li>
+		</ul>
+
+		<div class="titulo">Eventos</div>
+		<li *ngIf="hero?.results[0]?.events?.items.length == 0" class="list-group-item">Nenhum evento disponível.</li>
+		<ul class="list-group list-group-flush" *ngFor="let event of hero?.results[0]?.events.items">
+			<li class="list-group-item">{{event.name}}</li>
+		</ul>
+	</div>
+</div> -->
