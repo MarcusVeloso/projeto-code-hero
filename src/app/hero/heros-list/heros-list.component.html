@@ -1,39 +1,39 @@
 <div class="container">
   <h3>Busca de personagens</h3>
 
-  <mat-form-field appearance="standard">
-    <mat-label>Nome do personagem</mat-label>
-    <input matInput placeholder="Search" id="campoPesquisa" name="campoPesquisa">
-    <mat-icon (click)="pesquisarPersonagem()" matSuffix>search</mat-icon>
-  </mat-form-field>
-
-  <div class="row personagem">
-    <div class="col-4">Personagem</div>
-    <div class="col-5 mobile-hide">Séries</div>
-    <div class="col-3 mobile-hide">Eventos</div>
+  <h6>Nome do personagem</h6>
+  <div class="form-group pesquisa">    
+    <span class="material-icons form-control-feedback">search</span>
+    <input type="text" id="parametroPesquisa" class="form-control" placeholder="Search" (keyup.enter)="pesquisarPersonagem()">
   </div>
 
-  <mat-card *ngFor="let hero of heroList?.results | paginate: { itemsPerPage: 10, currentPage: page }" class="card"
+  <div class="row personagem-titulo">
+    <div class="col-sm-5 col-md-4">Personagem</div>
+    <div class="col-sm-5 col-md-5 mobile-hide">Séries</div>
+    <div class="col-sm-3 col-md-3 mobile-hide">Eventos</div>
+  </div>
+
+  <div class="card" *ngFor="let hero of heroList?.results | paginate: { itemsPerPage: 10, currentPage: page }" class="card"
     style="margin-bottom: 8px;">
 
     <div class="row">
       <div class="col-sm-5 col-md-4">
-        <img mat-card-sm-image src="{{hero?.thumbnail?.path +'.'+ hero?.thumbnail?.extension}}">
-        {{hero.name}}
+        <img src="{{hero?.thumbnail?.path +'.'+ hero?.thumbnail?.extension}}">
+        <span class="personagem-nome"> {{hero.name}} </span>
       </div>
-      <div class="col-sm-5 col-md-5 mobile-hide">
+      <div class="col-sm-5 col-md-5 mobile-hide personagem-itens">
         <div *ngFor="let serie of hero.series.items | slice:0:3;">
           {{serie.name}}
         </div>
       </div>
-      <div class="col-sm-3 col-md-3 mobile-hide">
+      <div class="col-sm-3 col-md-3 mobile-hide personagem-itens">
         <div *ngFor="let event of hero.events.items | slice:0:3;">
           {{event.name}}
         </div>
       </div>
     </div>
 
-  </mat-card>
+  </div>
 
   <pagination-controls class="my-pagination" (pageChange)="page = $event" previousLabel="" nextLabel="">
   </pagination-controls>
