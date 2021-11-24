@@ -1,5 +1,6 @@
-.nome-personagem {
-	padding-left: 20px;
+h3 {
+	font-family: PT Sans Caption;
+	font-size: 32px;
 }
 
 img {    
@@ -9,9 +10,16 @@ img {
 	width: 48px;
 	height: 48px;
 	border-radius: 5px;
+	margin: 20px 20px 20px 20px;
 }
 
-.table>:not(:first-child) {
-	border-top: 2px !important;
-	box-shadow: 0px 0px 5px #00000033;
+.row {
+	font-family: PT Sans;
+	text-align: left;
+	font-size: 12px;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+	background: #167ABC;
+	justify-content: center;
 }

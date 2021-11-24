@@ -7,36 +7,35 @@
     <mat-icon (click)="pesquisarPersonagem()" matSuffix>search</mat-icon>
   </mat-form-field>
 
-  <table class="table table-responsive table-hover">
-    <thead>
-      <tr>
-        <th scope="col-5">Personagem</th>
-        <th scope="col-4" class="mobile-hide">Séries</th>
-        <th scope="col-3" class="mobile-hide">Eventos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let hero of heroList?.results | paginate: { itemsPerPage: 10, currentPage: page }">
-        <td class="col-5"><img src="{{hero?.thumbnail?.path +'.'+ hero?.thumbnail?.extension}}"
-            alt="Imagem do personagem">
-          <span class="nome-personagem"> <strong>{{hero.name}}</strong> </span>
-        </td>
-        <td class="col-3" class="mobile-hide">
-          <div *ngFor="let serie of hero.series.items">
-            {{serie.name}}
-          </div>
-        </td>
-        <td class="col-3" class="mobile-hide">
-          <div *ngFor="let event of hero.events.items">
-            {{event.name}}
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row personagem">
+    <div class="col-4">Personagem</div>
+    <div class="col-5 mobile-hide">Séries</div>
+    <div class="col-3 mobile-hide">Eventos</div>
+  </div>
 
-  <pagination-controls (pageChange)="page = $event" previousLabel="" nextLabel="">
+  <mat-card *ngFor="let hero of heroList?.results | paginate: { itemsPerPage: 10, currentPage: page }" class="card"
+    style="margin-bottom: 8px;">
 
+    <div class="row">
+      <div class="col-sm-5 col-md-4">
+        <img mat-card-sm-image src="{{hero?.thumbnail?.path +'.'+ hero?.thumbnail?.extension}}">
+        {{hero.name}}
+      </div>
+      <div class="col-sm-5 col-md-5 mobile-hide">
+        <div *ngFor="let serie of hero.series.items | slice:0:3;">
+          {{serie.name}}
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3 mobile-hide">
+        <div *ngFor="let event of hero.events.items | slice:0:3;">
+          {{event.name}}
+        </div>
+      </div>
+    </div>
+
+  </mat-card>
+
+  <pagination-controls class="my-pagination" (pageChange)="page = $event" previousLabel="" nextLabel="">
   </pagination-controls>
 
 </div>

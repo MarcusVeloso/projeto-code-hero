@@ -1,4 +1,4 @@
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 600px) {
 	.mobile-hide{ display: none !important; }
 }
 @media only screen and (max-width: 450px) {
@@ -10,9 +10,9 @@ html, body { height: 100%; }
 body {
 	margin: 0;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
-	background: #E5E5E5 0% 0% no-repeat padding-box;
+	background: #E5E5E5 0% 0% no-repeat padding-box !important;
 	opacity: 1;
-	color: #555555;
+	color: #555555 !important;
  }
 
 .container { margin-top: 50px; }
