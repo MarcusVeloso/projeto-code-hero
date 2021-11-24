@@ -9,16 +9,14 @@ import { HeroService } from '../services/hero.service';
 })
 export class HerosDetailsComponent implements OnInit {
 
-  hero:any;
+  hero: any;
 
   constructor(private heroService: HeroService,
-              private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-
     this.heroService.obterPorId(this.route.snapshot.url[1].path)
-    .subscribe(hero => this.hero = hero);
-    
-  }
+      .subscribe(hero => this.hero = hero);
 
+  }
 }
