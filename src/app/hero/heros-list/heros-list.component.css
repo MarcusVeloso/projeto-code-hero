@@ -82,9 +82,13 @@ img {
 	opacity: 1;
 }
 
-.my-pagination /deep/ .ngx-pagination .current {
-	background: #167ABC;
-	justify-content: center;
+.card:hover{
+	transform: scale(1.00);
+	box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.06);    
+}
+
+nav {
+	margin-left: 525px;
 }
 
 @media (max-width: 600px) {
@@ -162,5 +166,9 @@ img {
 			opacity: 1;
 			max-width: 327px;
 			margin-left: 24px;
+		}
+
+		nav {
+			margin-left: 122px;
 		}
 }

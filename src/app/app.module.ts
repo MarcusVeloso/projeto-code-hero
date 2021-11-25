@@ -14,8 +14,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { NgxPaginationModule } from 'ngx-pagination';
-
 import { AppComponent } from './app.component';
 import { HerosListComponent } from './hero/heros-list/heros-list.component';
 import { HerosDetailsComponent } from './hero/heros-details/heros-details.component'
@@ -34,8 +32,6 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-
-    NgxPaginationModule,
 
     MatIconModule,
     MatButtonModule,

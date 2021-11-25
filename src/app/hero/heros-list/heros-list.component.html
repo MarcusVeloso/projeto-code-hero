@@ -8,17 +8,17 @@
       (keyup.enter)="pesquisarPersonagem(parametroPesquisa)">
   </div>
 
-  <div *ngIf="heroList?.data?.count > 0" class="row personagem-titulo">
+  <div *ngIf="pagina_count" class="row personagem-titulo">
     <div class="col-sm-5 col-md-4">Personagem</div>
     <div class="col-sm-5 col-md-5 mobile-hide">Séries</div>
     <div class="col-sm-3 col-md-3 mobile-hide">Eventos</div>
   </div>
 
-  <div class="card" *ngFor="let hero of heroList?.data?.results | paginate: { itemsPerPage: 10, currentPage: page }">
+  <div class="card" *ngFor="let hero of heroList?.data?.results">
 
     <div class="row" [routerLink]="['/hero-details', hero.id]">
       <div class="col-sm-5 col-md-4">
-        <img src="{{hero?.thumbnail?.path +'.'+ hero?.thumbnail?.extension}}">
+        <img src="{{hero.thumbnail.path +'.'+ hero.thumbnail.extension}}">
         <span class="personagem-nome"> {{hero.name}} </span>
       </div>
       <div class="col-sm-5 col-md-5 mobile-hide personagem-itens">
@@ -34,8 +34,21 @@
     </div>
 
   </div>
-  
-  <pagination-controls *ngIf="heroList?.data?.count > 0" class="my-pagination" (pageChange)="page = $event" previousLabel="" nextLabel="">
-  </pagination-controls>
+
+  <nav>
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="paginacaoAnterior()" aria-label="Anterior">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link">{{pagina_atual}}</a></li>
+      <li class="page-item">
+        <a *ngIf="pagina_count != 0" class="page-link" (click)="paginacaoProxima()" aria-label="Proximo">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
 </div>
