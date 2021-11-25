@@ -1,31 +1,34 @@
-# ProjetoCodeHero
+# Projeto Code Hero
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
+Front-end Angular para API Marvel
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Registro de Credenciais da API
+- Lista paginada de herois com pesquisa por nome
+- Detalhes do heroi
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute `$ npm i` para instalar as dependências do projeto.
 
-## Running unit tests
+## Executando testes end-to-end tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `$ ng e2e` para acessar os testes de ponta a ponta via [Protractor](http://www.protractortest.org/).
 
-## Running end-to-end tests
+## Pacotes utilizados
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Bootstrap
+$ npm install bootstrap
+https://getbootstrap.com/
 
-## Further help
+### Material Design
+$ ng add @angular/material
+https://material.angular.io/
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## md5
+### md5
 $ npm install @dikman/md5
 npmjs.com/package/@dikman/md5
+
+## Dev
+Marcus Veloso
