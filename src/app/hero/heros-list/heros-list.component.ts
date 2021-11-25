@@ -14,12 +14,15 @@ import {
 export class HerosListComponent implements OnInit {
 
   pagina_atual: number;
+  pagina_anterior: number;
+  pagina_seguinte: number;
   pagina_tamanho: number;
   pagina_total: number;
   pagina_offset: number;
   pagina_limit: number;
   pagina_count: number;
-  statusAnterior: string = 'disabled';
+  statusAnterior: string;
+  statusSeguinte: string;
 
   public heroList: any = [];
   parametroPesquisa: string;
@@ -30,15 +33,18 @@ export class HerosListComponent implements OnInit {
   constructor(private heroService: HeroService,
     private _snackBar: MatSnackBar) {
 
-      this.pagina_atual = 1;
-      this.pagina_tamanho = 10;
-      this.pagina_total = 0;
-      this.pagina_offset = 0;
-      this.pagina_limit = 10;
-      this.pagina_count = 0;
-      this.statusAnterior = 'disabled';
+    this.pagina_atual = 1;
+    this.pagina_anterior = 0;
+    this.pagina_seguinte = 2;
+    this.pagina_tamanho = 10;
+    this.pagina_total = 0;
+    this.pagina_offset = 10;
+    this.pagina_limit = 10;
+    this.pagina_count = 0;
+    this.statusAnterior = 'disabled';
+    this.statusSeguinte = 'disabled';
 
-     }
+  }
 
   ngOnInit(): void {
     this.consultaPadrao();
@@ -53,19 +59,48 @@ export class HerosListComponent implements OnInit {
         this.pagina_count = this.heroList.data.count;
         this.pagina_offset = this.heroList.data.offset;
         this.pagina_total = this.heroList.data.total;
+        this.statusAnterior = this.pagina_anterior == 0 ? 'disabled' : '';
+        this.statusSeguinte = this.pagina_count == 0 ? 'disabled' : '';
+
       });
   }
 
-  paginacaoAnterior() {
+  paginacaoAnterior(pagina: boolean = false) {
+
+    if (this.pagina_atual >= 1) {
+      this.pagina_atual--;
+    }
+
+    this.pagina_anterior = this.pagina_atual < 1 ? 0 : this.pagina_atual - 1;
+    this.pagina_seguinte = this.pagina_atual + 1;
+
+    if (pagina) {
+      this.pagina_offset = 10 * this.pagina_atual;
+    }
+
     this.pagina_offset = this.pagina_offset < 10 ? 0 : this.pagina_offset - 10;
+
     let parametro = { offset: this.pagina_offset };
-    this.pagina_atual--;
+
     this.consultaPadrao(parametro);
   }
-  paginacaoProxima() {
+
+  paginacaoSeguinte(pagina: boolean = false) {
+
+    if (this.pagina_atual > 0) {
+      this.pagina_atual++;
+      this.pagina_anterior = this.pagina_atual - 1;
+    }
+
+    this.pagina_seguinte = this.pagina_atual + 1;
+
+    if (pagina) {
+      this.pagina_offset = 10 * this.pagina_atual;
+    }
+
     this.pagina_offset = this.pagina_offset < 0 ? 0 : this.pagina_offset + 10;
     let parametro = { offset: this.pagina_offset };
-    this.pagina_atual++;
+
     this.consultaPadrao(parametro);
   }
 
