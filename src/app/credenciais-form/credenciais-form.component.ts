@@ -5,6 +5,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { LocalStorageUtils } from '../utils/localstorage';
 
 export class Credenciais {
   chave_publica: string;
@@ -25,6 +26,8 @@ export class CredenciaisFormComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
+  localStorage = new LocalStorageUtils();
+
   constructor(private heroService: HeroService,
     private _snackBar: MatSnackBar) { }
 
@@ -32,16 +35,12 @@ export class CredenciaisFormComponent implements OnInit {
   }
 
   salvarCredenciais() {
-
-    console.log("chave_privada: ", this.chave_privada);
-    console.log("chave_publica: ", this.chave_publica);
     
     if (this.chave_privada && this.chave_publica) {
       this.credenciais = { chave_privada: this.chave_privada, chave_publica: this.chave_publica }
-      console.log("credenciais: ", this.credenciais);
 
+      this.localStorage.salvarCredenciais(this.credenciais);
       this.exibirMensagem();
-      this.heroService.salvarCredenciais(this.credenciais);
     }
   }
 

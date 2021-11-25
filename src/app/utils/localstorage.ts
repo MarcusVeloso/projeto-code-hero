@@ -3,11 +3,11 @@ import { md5 } from '@dikman/md5';
 export class LocalStorageUtils {
 
     public obterApiKey() {
-        return JSON.parse(localStorage.getItem('apikey'))
+        return localStorage.getItem('apikey');
     }
     
     public obterHash() {
-        return JSON.parse(localStorage.getItem('hash'))
+        return localStorage.getItem('hash');
     }
 
     private removerCredenciais(){
@@ -15,10 +15,10 @@ export class LocalStorageUtils {
         localStorage.removeItem('hash');
     }
 
-    public salvarApiKey(dados: any) {
+    public salvarCredenciais(dados: any) {
         this.removerCredenciais();
 
-        localStorage.setItem('apikey', dados.public_key);
+        localStorage.setItem('apikey', dados.chave_publica);
 
         this.salvarHash(dados);
     }
@@ -26,7 +26,7 @@ export class LocalStorageUtils {
     private salvarHash(dados: any) {
 
         //CRIPTOGRAFAR MD5
-        let variaveis = '1' + dados.private_key + this.obterApiKey();;
+        let variaveis = '1' + dados.chave_privada + this.obterApiKey();;
         let hash = md5(variaveis);
         localStorage.setItem('hash', hash);
     }

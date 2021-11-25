@@ -28,6 +28,6 @@ export abstract class BaseService {
   }
 
   protected obterAutenticacao(){
-    return `ts=1&apikey=${this.LocalStorage.obterApiKey()}&hash=${this.LocalStorage.obterHash}`;
+    return `ts=1&apikey=${this.LocalStorage.obterApiKey()}&hash=${this.LocalStorage.obterHash()}`;
   }
 }

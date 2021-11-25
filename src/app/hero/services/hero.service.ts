@@ -2,9 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError } from "rxjs/operators";
-import { Credenciais } from 'src/app/credenciais-form/credenciais-form.component';
 import { BaseService } from 'src/app/services/base.service';
-import { LocalStorageUtils } from 'src/app/utils/localstorage';
 
 @Injectable()
 export class HeroService extends BaseService {
@@ -30,11 +28,5 @@ export class HeroService extends BaseService {
     return this.http
       .get<any[]>(this.UrlSreviceV1 + "characters?name=" + nome + "&" + super.obterAutenticacao(), super.obterHeaderJson())
       .pipe(catchError(super.serviceError));
-  }
-
-  salvarCredenciais(credenciais:Credenciais): Observable<Credenciais> {
-    let LocalStorage = new LocalStorageUtils();
-    LocalStorage.salvarApiKey(credenciais);
-    return;
   }
 }
