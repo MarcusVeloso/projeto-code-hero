@@ -31,12 +31,15 @@ h6 {
 	position: absolute;	
 	display: block;
 	padding-top: 4px;
-	pointer-events: none;
 	color: #aaa;
 	padding-left: 255px;
 	width: 24px;
 	height: 24px;
-	opacity: 1;
+	opacity: 1;	
+}
+
+span {
+	cursor: pointer;
 }
 
 .card {
@@ -89,8 +92,7 @@ img {
 
 .paginacao {
 	display: flex;
-	justify-content:center;	
-	color: red;
+	justify-content:center;
 }
 
 nav {	
@@ -139,15 +141,15 @@ nav {
 			background: #FFFFFF 0% 0% no-repeat padding-box;
 			border: 1px solid #E5E5E5;
 			margin-left: 24px;
+			cursor: pointer !important;
 		}
 		
 		.pesquisa .form-control-feedback {
 			position: absolute;	
 			display: block;
 			padding-top: 4px;
-			pointer-events: none;
 			color: #aaa;
-			padding-left: 287px;
+			padding-left: 310px;
 			width: 24px;
 			height: 24px;
 			opacity: 1;

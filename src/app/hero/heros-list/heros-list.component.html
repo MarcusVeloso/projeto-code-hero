@@ -2,9 +2,10 @@
   <h3>Busca de personagens</h3>
 
   <h6>Nome do personagem</h6>
+
   <div class="form-group pesquisa">
-    <span class="material-icons form-control-feedback">search</span>
-    <input type="text" id="parametroPesquisa" [(ngModel)]="parametroPesquisa" class="form-control" placeholder="Search"
+    <span id="lupaPesquisa" (click)="pesquisarPersonagem(parametroPesquisa)" class="material-icons form-control-feedback">search</span>
+    <input type="text" id="parametroPesquisa" autocomplete="off" [(ngModel)]="parametroPesquisa" class="form-control" placeholder="Search"
       (keyup.enter)="pesquisarPersonagem(parametroPesquisa)">
   </div>
 
@@ -35,7 +36,7 @@
 
   </div>
 
-  <div class="paginacao">
+  <div *ngIf="heroList?.data?.count" class="paginacao">
     <nav>
       <ul class="pagination">
         <li class="page-item {{statusAnterior}}"><a class="page-link" (click)="paginacaoAnterior()"
