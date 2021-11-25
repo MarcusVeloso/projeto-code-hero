@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { HerosListComponent } from './hero/heros-list/heros-list.component';
@@ -14,13 +15,15 @@ import { HerosDetailsComponent } from './hero/heros-details/heros-details.compon
 import { HeroService } from './hero/services/hero.service';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
+import { CredenciaisFormComponent } from './credenciais-form/credenciais-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HerosListComponent,
     HerosDetailsComponent,
-    MenuComponent
+    MenuComponent,
+    CredenciaisFormComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { MenuComponent } from './menu/menu.component';
 
     MatButtonModule,
     MatToolbarModule,
+    MatDialogModule,
     MatSnackBarModule,
   ],
   providers: [

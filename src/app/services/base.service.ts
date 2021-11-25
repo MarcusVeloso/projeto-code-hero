@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpHeaders } from "@angular/common/http";
 import { throwError } from 'rxjs';
+import { LocalStorageUtils } from '../utils/localstorage';
 
 @Injectable()
 export abstract class BaseService {
 
   protected UrlSreviceV1: string = environment.urlV1;
+  public LocalStorage = new LocalStorageUtils();
 
   protected obterHeaderJson() {
     return {
@@ -26,6 +28,6 @@ export abstract class BaseService {
   }
 
   protected obterAutenticacao(){
-    return `ts=1&apikey=${environment.apikey}&hash=${environment.hash}`;
+    return `ts=1&apikey=${this.LocalStorage.obterApiKey()}&hash=${this.LocalStorage.obterHash}`;
   }
 }
