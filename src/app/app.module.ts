@@ -13,12 +13,14 @@ import { HerosListComponent } from './hero/heros-list/heros-list.component';
 import { HerosDetailsComponent } from './hero/heros-details/heros-details.component'
 import { HeroService } from './hero/services/hero.service';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HerosListComponent,
-    HerosDetailsComponent
+    HerosDetailsComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
