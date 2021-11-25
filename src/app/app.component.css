@@ -1,9 +1,9 @@
 .spacer {
-    flex: 1 1 auto;
+    flex:1;    
   } 
 
-  h6 {
-    margin-right: 5px;
+  .row, .col-sm-6, h6 {
+    padding: 0px;
   }
 
 .nome-candidato {
@@ -32,9 +32,49 @@ li {
   height: 32px;
 }
 
-.card:hover{
+.retangulo {
+  width: 32;
+  height: 32;
+  margin-left: 50px;
+}
+
+.retangulo:hover{
   transform: scale(1.02);
   color: rgba(85, 85, 85, 1);
   background-color: rgba(85, 85, 85, 1);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .spacer {
+    margin-left: 60px;
+    background-color: red !important;
+  }
+
+  .nome-candidato {
+    text-align: center;
+    font: normal normal bold 12px/16px PT Sans Caption;
+    letter-spacing: 0px;
+    color: #555555 !important;
+  }
+
+  .teste-front-end {
+    text-align: center;
+    font: normal normal 12px/16px PT Sans Caption;
+    letter-spacing: 0px;
+    color: #555555;
+  }
+
+  .retangulo {
+    width: 32;
+    height: 32;
+    margin-left: 0px;
+  }
+  
 }
