@@ -51,6 +51,10 @@ li {
   align-items: center;
 }
 
+.mat-toolbar{
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .spacer {
     margin-left: 60px;

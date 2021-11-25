@@ -6,6 +6,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { LocalStorageUtils } from '../utils/localstorage';
+import { Router } from '@angular/router';
 
 export class Credenciais {
   chave_publica: string;
@@ -29,24 +30,26 @@ export class CredenciaisFormComponent implements OnInit {
   localStorage = new LocalStorageUtils();
 
   constructor(private heroService: HeroService,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
   salvarCredenciais() {
-    
+
     if (this.chave_privada && this.chave_publica) {
       this.credenciais = { chave_privada: this.chave_privada, chave_publica: this.chave_publica }
 
       this.localStorage.salvarCredenciais(this.credenciais);
       this.exibirMensagem();
+      this.router.navigate(['/heroes-list']);
     }
   }
 
   exibirMensagem() {
     this._snackBar.open
-      ("Um momento, salvando suas credencias!", "x",
+      ("Credencias foram salvas com sucesso!", "x",
         {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
