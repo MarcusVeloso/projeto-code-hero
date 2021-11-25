@@ -169,6 +169,20 @@ nav {
 		}
 
 		nav {
-			margin-left: 122px;
+			margin-left: 112px;
+			padding-bottom: 5px;			
+		}
+
+		.page-item.active .page-link {
+			z-index: 3;
+			color: #fff;
+			background-color: #167ABC;
+			border-color: #167ABC;
+		}
+
+		.page-link {
+			color: #555555;
+			background: #F5F5F5 0% 0% no-repeat padding-box;
+			border: 1px solid #E5E5E5;
 		}
 }
